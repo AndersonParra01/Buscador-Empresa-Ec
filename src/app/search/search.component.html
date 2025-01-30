@@ -1,0 +1,54 @@
+<div class="p-fluid">
+  <div class="field">
+    <label for="searchText">Nombre de la Empresa</label>
+    <input
+      id="searchText"
+      type="text"
+      pInputText
+      [(ngModel)]="searchText"
+      placeholder="Buscar empresa por nombre"
+    />
+  </div>
+</div>
+
+<div class="field">
+  <label for="cityChips">Ciudades</label>
+  <p-chip
+    [(ngModel)]="selectedCities"
+    placeholder="'Selecciona ciudades'"
+    [removable]="true"
+  ></p-chip>
+</div>
+
+<!-- Filtros por Barrio -->
+<div class="field">
+  <label for="neighborhoodChips">Barrios</label>
+  <p-chip
+    [(ngModel)]="selectedNeighborhoods"
+    placeholder="'Selecciona barrios'"
+    [removable]="true"
+  ></p-chip>
+</div>
+
+<!-- Búsqueda por RUC -->
+<div class="field">
+  <label for="rucSearch">RUC</label>
+  <input
+    id="rucSearch"
+    type="text"
+    pInputText
+    [(ngModel)]="searchRUC"
+    placeholder="Buscar empresa por RUC"
+  />
+</div>
+
+<!-- Botón de Búsqueda -->
+<div class="flex justify-content-end mt-3">
+  <button
+    pButton
+    type="button"
+    label="Buscar"
+    icon="pi pi-search"
+    (click)="search()"
+  ></button>
+</div>

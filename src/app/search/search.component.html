@@ -1,46 +1,56 @@
-<div class="p-fluid">
-  <div class="field">
-    <label for="searchText">Nombre de la Empresa</label>
-    <input
-      id="searchText"
-      type="text"
-      pInputText
-      [(ngModel)]="searchText"
-      placeholder="Buscar empresa por nombre"
-    />
+<p-tabs value="0">
+  <div class="justify-center items-center">
+    <p-tablist>
+      <p-tab value="0">Buscar por RUC</p-tab>
+      <p-tab value="1">Buscar por Parametros</p-tab>
+    </p-tablist>
   </div>
-</div>
+  <p-tabpanels>
+    <p-tabpanel value="0" class="bg-amber-300">
+      <div class="grid grid-cols-2 bg-amber-500 gap-4">
+        <div class="flex flex-col">
+          <label for="rucSearch">RUC:</label>
+          <input
+            type="text"
+            pInputText
+            [(ngModel)]="searchRUC"
+            placeholder="Buscar empresa por RUC"
+          />
+        </div>
+      </div>
+    </p-tabpanel>
+    <p-tabpanel value="1">
+      <div class="grid grid-cols-2 bg-amber-500 gap-4">
+        <div class="flex flex-col col">
+          <label for="searchText">Nombre de la Empresa</label>
+          <input
+            id="searchText"
+            type="text"
+            pInputText
+            [(ngModel)]="searchCompany"
+            placeholder="Buscar empresa por nombre"
+          />
 
-<div class="field">
-  <label for="cityChips">Ciudades</label>
-  <p-chip
-    [(ngModel)]="selectedCities"
-    placeholder="'Selecciona ciudades'"
-    [removable]="true"
-  ></p-chip>
-</div>
+          <label for="cityChips">Ciudades</label>
+          <!--  <p-chip
+            [(ngModel)]="selectedCities"
+            placeholder="'Selecciona ciudades'"
+            [removable]="true"
+          ></p-chip> -->
+
+          <label for="neighborhoodChips">Barrios</label>
+          <!--  <p-chip
+            [(ngModel)]="selectedNeighborhoods"
+            placeholder="'Selecciona barrios'"
+            [removable]="true"
+          ></p-chip> -->
+        </div>
+      </div>
+    </p-tabpanel>
+  </p-tabpanels>
+</p-tabs>
 
 <!-- Filtros por Barrio -->
-<div class="field">
-  <label for="neighborhoodChips">Barrios</label>
-  <p-chip
-    [(ngModel)]="selectedNeighborhoods"
-    placeholder="'Selecciona barrios'"
-    [removable]="true"
-  ></p-chip>
-</div>
-
-<!-- Búsqueda por RUC -->
-<div class="field">
-  <label for="rucSearch">RUC</label>
-  <input
-    id="rucSearch"
-    type="text"
-    pInputText
-    [(ngModel)]="searchRUC"
-    placeholder="Buscar empresa por RUC"
-  />
-</div>
 
 <!-- Botón de Búsqueda -->
 <div class="flex justify-content-end mt-3">
